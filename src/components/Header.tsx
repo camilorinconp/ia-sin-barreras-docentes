@@ -1,16 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
-import { useState } from "react";
-import LogoProcessor from "./LogoProcessor";
 
 const Header = () => {
-  const [logoUrl, setLogoUrl] = useState<string>('/lovable-uploads/7714c3b9-e349-4290-abe2-d780d6a516a0.png');
-
-  const handleLogoProcessed = (processedUrl: string) => {
-    setLogoUrl(processedUrl);
-  };
-
   const navLinks = [
     { href: "#programa", label: "Programa" },
     { href: "#beneficios", label: "Beneficios" },
@@ -24,11 +16,10 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center space-x-3">
             <img 
-              src={logoUrl}
+              src="/lovable-uploads/LogoSinFondoIA.png"
               alt="IA Sin Barreras Logo" 
               className="h-10 w-auto"
             />
-            <LogoProcessor onProcessed={handleLogoProcessed} />
           </div>
           
           {/* Desktop Navigation */}
