@@ -1,6 +1,6 @@
 const ValidationSection = () => {
   return (
-    <section className="py-24 bg-background">
+    <section className="py-32 bg-background">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <div className="relative">
