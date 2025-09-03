@@ -1,6 +1,14 @@
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
+import LogoProcessor from "./LogoProcessor";
 
 const Header = () => {
+  const [logoUrl, setLogoUrl] = useState<string>('/lovable-uploads/7714c3b9-e349-4290-abe2-d780d6a516a0.png');
+
+  const handleLogoProcessed = (processedUrl: string) => {
+    setLogoUrl(processedUrl);
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
       <div className="container mx-auto px-6 py-4">
@@ -8,10 +16,11 @@ const Header = () => {
           {/* Logo - Posición principal UX */}
           <div className="flex items-center space-x-3">
             <img 
-              src="/lovable-uploads/7714c3b9-e349-4290-abe2-d780d6a516a0.png" 
+              src={logoUrl}
               alt="IA Sin Barreras Logo" 
               className="h-10 w-auto"
             />
+            <LogoProcessor onProcessed={handleLogoProcessed} />
           </div>
           
           {/* Navigation */}
