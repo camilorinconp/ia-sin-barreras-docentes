@@ -27,7 +27,7 @@ const BenefitsSection = () => {
           {benefits.map((benefit, index) => (
             <Card 
               key={index} 
-              className="bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-card-glow transition-all duration-300 group"
+              className="bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-card-glow transition-all duration-300 group hover:-translate-y-2"
             >
               <CardContent className="p-8 text-center space-y-4">
                 <div className="w-16 h-16 mx-auto bg-gradient-primary rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">

@@ -20,19 +20,19 @@ const ValidationSection = () => {
                 </p>
                 
                 <div className="flex flex-wrap justify-center gap-8 pt-8">
-                  <div className="flex items-center space-x-3">
+                  <div className="flex items-center space-x-3 transition-opacity hover:opacity-80 cursor-pointer">
                     <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center">
                       <span className="text-xs font-bold text-primary">BID</span>
                     </div>
                     <span className="text-sm text-muted-foreground">BID Lab</span>
                   </div>
-                  <div className="flex items-center space-x-3">
+                  <div className="flex items-center space-x-3 transition-opacity hover:opacity-80 cursor-pointer">
                     <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center">
                       <span className="text-xs font-bold text-primary">M</span>
                     </div>
                     <span className="text-sm text-muted-foreground">Meta</span>
                   </div>
-                  <div className="flex items-center space-x-3">
+                  <div className="flex items-center space-x-3 transition-opacity hover:opacity-80 cursor-pointer">
                     <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center">
                       <span className="text-xs font-bold text-primary">B</span>
                     </div>
