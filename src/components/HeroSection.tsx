@@ -3,7 +3,7 @@ import heroImage from "@/assets/hero-ai-education.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-secondary">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-secondary pt-20">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-accent" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,hsl(262_83%_58%_/_0.1),transparent_70%)]" />
