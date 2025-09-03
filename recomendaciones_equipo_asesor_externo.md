@@ -42,6 +42,7 @@ Este documento contiene una serie de recomendaciones de alto nivel para mejorar 
 
 **Recomendación:**
 - **Jugar con la Tipografía:** Establecer una escala tipográfica más definida. Los títulos de sección (`h2`) deben tener un peso y tamaño claramente superior a los subtítulos (`h3`) y al cuerpo del texto. Esto ayuda a los usuarios a escanear el contenido fácilmente.
+
 - **Aumentar el Espaciado (Whitespace):** Incrementar ligeramente el espaciado vertical entre las secciones principales. El "espacio en blanco" o "espacio negativo" es una característica clave del diseño premium, ya que reduce la carga cognitiva y hace que el contenido sea más digerible.
 - **Revisar Contraste de Color:** Asegurarse de que todo el texto, especialmente el `text-muted-foreground` sobre los fondos con gradientes, cumpla con las pautas de accesibilidad (WCAG AA). Un texto legible es fundamental para una experiencia de calidad.
 
@@ -54,3 +55,43 @@ Este documento contiene una serie de recomendaciones de alto nivel para mejorar 
 **Recomendación:**
 - **Añadir un CTA Secundario o Final:** Considerar añadir una versión del CTA al final de la página, justo después de la sección de validación. Esto captura al usuario cuando su interés y confianza están en el punto más alto.
 - **Clarificar el "Siguiente Paso":** ¿Qué sucede al hacer clic en el botón? Es importante que el siguiente paso sea claro. Si lleva a un formulario, que este sea simple y directo. El texto del botón podría incluso ser más específico si es posible, como *"Aplicar a la Beca"*.
+
+---
+
+## 6. Diseño Mobile-First y de Alto Impacto
+
+El proyecto ya demuestra un sólido enfoque mobile-first en su estructura base de Tailwind CSS. Para elevar aún más el diseño a un nivel de "gran impacto" y "premium" en dispositivos móviles, se recomiendan las siguientes mejoras:
+
+**6.1. Optimización Avanzada de Imágenes:**
+- **Observación:** Aunque las imágenes se adaptan, la velocidad de carga y la calidad visual en diferentes dispositivos móviles pueden mejorarse.
+- **Recomendación:** Implementar un proceso riguroso de optimización de imágenes. Esto incluye:
+    - **Compresión:** Reducir el tamaño de los archivos sin sacrificar calidad perceptible.
+    - **Formatos Modernos:** Convertir imágenes a formatos más eficientes como WebP.
+    - **Imágenes Responsivas (`srcset` y `sizes`):** Utilizar atributos `srcset` y `sizes` en las etiquetas `<img>` para servir diferentes resoluciones de imagen según el dispositivo y el tamaño de la pantalla. Esto asegura que los usuarios móviles descarguen solo el tamaño de imagen necesario, mejorando el rendimiento y la nitidez.
+
+**6.2. Micro-interacciones Táctiles y Feedback Visual:**
+- **Observación:** Los efectos `hover` son efectivos en desktop, pero en dispositivos táctiles, la interacción es diferente.
+- **Recomendación:** Asegurarse de que todos los elementos interactivos (botones, tarjetas, logos de validación) proporcionen un feedback visual claro e instantáneo al ser tocados. Esto puede incluir:
+    - Un ligero cambio de color de fondo.
+    - Una sombra sutil.
+    - Una pequeña escala (`scale`) o un efecto de "presión" (`active` state).
+    Esto mejora la percepción de respuesta y la calidad de la interacción táctil.
+
+**6.3. Navegación Móvil Optimizada (Header):**
+- **Observación:** La navegación es un componente crítico para la usabilidad móvil.
+- **Recomendación:**
+    - **Menú de Hamburguesa Intuitivo:** Implementar un menú de hamburguesa (`hamburger menu`) que sea fácil de encontrar, abrir y cerrar.
+    - **Elementos de Navegación Táctiles:** Asegurar que los elementos dentro del menú desplegable sean grandes y estén bien espaciados para evitar toques accidentales.
+    - **Header Fijo (`Sticky Header`):** Considerar hacer que el `Header` sea fijo en la parte superior de la pantalla al desplazarse. Esto permite un acceso constante a la navegación y al logo de la marca, mejorando la experiencia del usuario en páginas largas.
+
+**6.4. Contraste y Legibilidad en Diversas Condiciones:**
+- **Observación:** El uso de colores `muted-foreground` sobre fondos con gradientes o imágenes puede comprometer la legibilidad en condiciones de luz solar directa o en pantallas de baja calidad.
+- **Recomendación:** Realizar pruebas exhaustivas de contraste de color en diferentes dispositivos y condiciones de iluminación. Asegurarse de que todo el texto cumpla o supere las pautas de accesibilidad (WCAG AA) para garantizar la legibilidad universal.
+
+**6.5. Monitoreo y Optimización Continua del Rendimiento Móvil:**
+- **Observación:** Un diseño de alto impacto se ve directamente afectado por la velocidad de carga y la fluidez en dispositivos móviles.
+- **Recomendación:**
+    - **Auditorías de Rendimiento:** Realizar auditorías regulares de rendimiento móvil (ej. con Lighthouse de Google Chrome) para identificar cuellos de botella.
+    - **Minimización de Recursos:** Continuar minimizando y comprimiendo archivos JavaScript, CSS y HTML.
+    - **Carga Diferida (`Lazy Loading`):** Implementar carga diferida para imágenes y otros recursos que no son visibles en la vista inicial.
+    - **Optimización de Fuentes:** Asegurarse de que las fuentes web se carguen de manera eficiente para evitar el "flash of unstyled text" (FOUT).
