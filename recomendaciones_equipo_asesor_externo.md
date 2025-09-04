@@ -134,3 +134,35 @@ Para lograr un diseño "muy moderno" y de alto impacto, se recomienda la siguien
     *   **`Inter`**: Una fuente sans-serif altamente versátil, diseñada para pantallas. Ofrece una excelente legibilidad en tamaños pequeños y grandes, con una amplia gama de pesos. Combina perfectamente con `Outfit` y es una opción muy popular en diseños modernos. Utilizar pesos como Regular y Medium.
 
 Esta combinación de `Outfit` para titulares y `Inter` para el cuerpo de texto proporcionará una estética moderna, limpia y tecnológica, manteniendo una legibilidad óptima en todos los dispositivos.
+
+---
+
+## 8. Solución a Errores 404 en GitHub Pages (Archivos CSS/JS)
+
+**Problema:** La página de GitHub Pages se muestra en blanco con errores 404 para los archivos CSS y JS. Esto indica que el navegador busca estos archivos en una ubicación incorrecta.
+
+**Causa:** Este problema se debe a la configuración de la ruta base en `vite.config.ts`. Para el despliegue en GitHub Pages, la ruta base debe ser el nombre del repositorio (ej. `/ia-sin-barreras-docentes/`). Si esta línea está comentada para el desarrollo local, Vite construye el proyecto asumiendo que se servirá desde la raíz, lo cual es incorrecto para GitHub Pages.
+
+**Solución:**
+1.  **Descomentar la ruta base en `vite.config.ts`:**
+    Asegúrate de que la línea `base: "/ia-sin-barreras-docentes/",` esté activa y no comentada en tu archivo `vite.config.ts`.
+
+    ```typescript
+    import { defineConfig } from 'vite'
+    import react from '@vitejs/plugin-react'
+
+    // https://vitejs.dev/config/
+    export default defineConfig({
+      plugins: [react()],
+      base: "/ia-sin-barreras-docentes/", // Asegúrate de que esta línea no esté comentada
+    })
+    ```
+
+2.  **Reconstruir el proyecto:**
+    Ejecuta el comando de construcción de Vite para generar los archivos optimizados con la ruta base correcta:
+    `npm run build`
+
+3.  **Redeployar a GitHub Pages:**
+    Sube los cambios a tu repositorio de GitHub. Si tienes configurado GitHub Actions para el despliegue automático, esto debería activar un nuevo despliegue. Si no, sigue los pasos manuales para subir los archivos generados en la carpeta `dist` a la rama de despliegue de GitHub Pages (comúnmente `gh-pages` o `main` si la configuración es servir desde la carpeta `docs`).
+
+**Resultado:** Al seguir estos pasos, los archivos CSS y JS serán referenciados correctamente en la página de GitHub Pages, resolviendo los errores 404 y permitiendo que el sitio se muestre correctamente.

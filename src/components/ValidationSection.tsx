@@ -41,7 +41,7 @@ const ValidationSection = () => {
                     <span className="text-sm text-muted-foreground">Burodap</span>
                   </div>
                 </div>
-                <div className="pt-8">
+                <div className="pt-8 flex justify-center">
                   <Button 
                     size="lg" 
                     className="text-lg px-8 py-6 bg-gradient-primary hover:shadow-hero-glow transition-all duration-300 border-0"
