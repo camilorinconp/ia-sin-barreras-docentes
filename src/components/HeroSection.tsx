@@ -1,5 +1,14 @@
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-ai-education.jpg";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import ScholarshipApplicationForm from "./ScholarshipApplicationForm";
 
 const HeroSection = () => {
   return (
@@ -29,12 +38,25 @@ const HeroSection = () => {
           </p>
           
           <div className="pt-8">
-            <Button 
-              size="lg" 
-              className="text-lg px-8 py-6 bg-gradient-primary hover:shadow-hero-glow transition-all duration-300 border-0"
-            >
-              ¡Asegura la beca para tu institución!
-            </Button>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button 
+                  size="lg" 
+                  className="text-lg px-8 py-6 bg-gradient-primary hover:shadow-hero-glow transition-all duration-300 border-0"
+                >
+                  ¡Asegura la beca para tu institución!
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-[425px]">
+                <DialogHeader>
+                  <DialogTitle>Solicitud de Beca</DialogTitle>
+                  <DialogDescription>
+                    Completa el formulario para asegurar la beca para tu institución.
+                  </DialogDescription>
+                </DialogHeader>
+                <ScholarshipApplicationForm />
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
       </div>

@@ -1,6 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import ScholarshipApplicationForm from "./ScholarshipApplicationForm";
 
 const Header = () => {
   const navLinks = [
@@ -33,9 +42,22 @@ const Header = () => {
           
           {/* CTA Button (Desktop) */}
           <div className="hidden md:block">
-            <Button className="bg-gradient-primary hover:shadow-hero-glow transition-all duration-300">
-              Aplicar Ahora
-            </Button>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button className="bg-gradient-primary hover:shadow-hero-glow transition-all duration-300">
+                  Aplicar Ahora
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-[425px]">
+                <DialogHeader>
+                  <DialogTitle>Solicitud de Beca</DialogTitle>
+                  <DialogDescription>
+                    Completa el formulario para aplicar a la beca.
+                  </DialogDescription>
+                </DialogHeader>
+                <ScholarshipApplicationForm />
+              </DialogContent>
+            </Dialog>
           </div>
 
           {/* Mobile Navigation */}
@@ -54,9 +76,22 @@ const Header = () => {
                       {link.label}
                     </a>
                   ))}
-                  <Button className="bg-gradient-primary hover:shadow-hero-glow transition-all duration-300 mt-6">
-                    Aplicar Ahora
-                  </Button>
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <Button className="bg-gradient-primary hover:shadow-hero-glow transition-all duration-300 mt-6">
+                        Aplicar Ahora
+                      </Button>
+                    </DialogTrigger>
+                    <DialogContent className="sm:max-w-[425px]">
+                      <DialogHeader>
+                        <DialogTitle>Solicitud de Beca</DialogTitle>
+                        <DialogDescription>
+                          Completa el formulario para aplicar a la beca.
+                        </DialogDescription>
+                      </DialogHeader>
+                      <ScholarshipApplicationForm />
+                    </DialogContent>
+                  </Dialog>
                 </div>
               </SheetContent>
             </Sheet>
