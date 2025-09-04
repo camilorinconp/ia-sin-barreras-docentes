@@ -34,7 +34,7 @@ const BenefitsSection = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <Card 
-                className="bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-card-glow transition-all duration-300 group hover:-translate-y-2"
+                className="bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-card-glow transition-all duration-300 group hover:-translate-y-2 active:scale-[0.98]"
               >
                 <CardContent className="p-8 text-center space-y-4">
                   <div className="w-16 h-16 mx-auto bg-gradient-primary rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">

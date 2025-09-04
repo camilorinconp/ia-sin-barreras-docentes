@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/button";
+
 const ValidationSection = () => {
   return (
     <section className="py-32 bg-background">
@@ -20,24 +22,32 @@ const ValidationSection = () => {
                 </p>
                 
                 <div className="flex flex-wrap justify-center gap-8 pt-8">
-                  <div className="flex items-center space-x-3 transition-opacity hover:opacity-80 cursor-pointer">
+                  <div className="flex items-center space-x-3 transition-opacity hover:opacity-80 active:opacity-70 cursor-pointer">
                     <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center">
                       <span className="text-xs font-bold text-primary">BID</span>
                     </div>
                     <span className="text-sm text-muted-foreground">BID Lab</span>
                   </div>
-                  <div className="flex items-center space-x-3 transition-opacity hover:opacity-80 cursor-pointer">
+                  <div className="flex items-center space-x-3 transition-opacity hover:opacity-80 active:opacity-70 cursor-pointer">
                     <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center">
                       <span className="text-xs font-bold text-primary">M</span>
                     </div>
                     <span className="text-sm text-muted-foreground">Meta</span>
                   </div>
-                  <div className="flex items-center space-x-3 transition-opacity hover:opacity-80 cursor-pointer">
+                  <div className="flex items-center space-x-3 transition-opacity hover:opacity-80 active:opacity-70 cursor-pointer">
                     <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center">
                       <span className="text-xs font-bold text-primary">B</span>
                     </div>
                     <span className="text-sm text-muted-foreground">Burodap</span>
                   </div>
+                </div>
+                <div className="pt-8">
+                  <Button 
+                    size="lg" 
+                    className="text-lg px-8 py-6 bg-gradient-primary hover:shadow-hero-glow transition-all duration-300 border-0"
+                  >
+                    ¡Asegura la beca para tu institución!
+                  </Button>
                 </div>
               </div>
             </div>

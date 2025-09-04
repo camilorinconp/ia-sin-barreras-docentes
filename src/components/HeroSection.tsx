@@ -20,7 +20,7 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 text-center">
         <div className="max-w-4xl mx-auto space-y-8">
-          <h1 className="text-5xl md:text-7xl font-bold bg-gradient-primary bg-clip-text text-transparent leading-tight">
+          <h1 className="relative z-10 text-5xl md:text-7xl font-bold text-foreground leading-tight">
             El futuro de la educación está aquí: Conviértete en un líder en IA
           </h1>
           
