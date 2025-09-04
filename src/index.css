@@ -14,17 +14,21 @@ All colors MUST be HSL.
     --card: 240 10% 5.9%;
     --card-foreground: 0 0% 98%;
 
+    --surface: 240 10% 5.9%;
+
     --popover: 240 10% 5.9%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 262 83% 58%;  
+    --primary-accent: 262 83% 58%;
+    --primary-accent-light: 220 91% 65%;
+    --secondary-accent: 180 70% 50%;  
     --primary-foreground: 0 0% 98%;
 
     --secondary: 240 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
 
     --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
+    --text-secondary: 240 5% 75%;
 
     --accent: 262 83% 58%;
     --accent-foreground: 0 0% 98%;
@@ -37,9 +41,10 @@ All colors MUST be HSL.
     --ring: 262 83% 58%;
 
     /* Custom design tokens for IA Sin Barreras */
-    --gradient-primary: linear-gradient(135deg, hsl(262 83% 58%), hsl(220 91% 65%));
-    --gradient-secondary: linear-gradient(135deg, hsl(240 10% 3.9%), hsl(240 10% 8%));
+    --gradient-primary: linear-gradient(135deg, var(--primary-accent), var(--primary-accent-light));
+    --gradient-secondary: linear-gradient(135deg, var(--background), hsl(240 10% 8%));
     --gradient-accent: linear-gradient(90deg, hsl(262 83% 58% / 0.1), hsl(220 91% 65% / 0.1));
+    --gradient-secondary-accent: linear-gradient(45deg, var(--secondary-accent), hsl(200 80% 60%));
     
     --hero-glow: 0 0 80px hsl(262 83% 58% / 0.3);
     --card-glow: 0 10px 40px hsl(262 83% 58% / 0.1);
@@ -111,6 +116,10 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
   }
 }
