@@ -93,5 +93,44 @@ El proyecto ya demuestra un sólido enfoque mobile-first en su estructura base d
 - **Recomendación:**
     - **Auditorías de Rendimiento:** Realizar auditorías regulares de rendimiento móvil (ej. con Lighthouse de Google Chrome) para identificar cuellos de botella.
     - **Minimización de Recursos:** Continuar minimizando y comprimiendo archivos JavaScript, CSS y HTML.
-    - **Carga Diferida (`Lazy Loading`):** Implementar carga diferida para imágenes y otros recursos que no son visibles en la vista inicial.
+    - **Carga Diferida (`Lazy Loading`):
     - **Optimización de Fuentes:** Asegurarse de que las fuentes web se carguen de manera eficiente para evitar el "flash of unstyled text" (FOUT).
+
+---
+
+## 7. Paleta de Colores y Tipografía para un Diseño Moderno de Alto Impacto
+
+Para lograr un diseño "muy moderno" y de alto impacto, se proponen las siguientes directrices para la paleta de colores y la tipografía, construyendo sobre la base actual del proyecto:
+
+### 7.1. Paleta de Colores Refinada
+
+La paleta actual es una base sólida para un tema oscuro. Para elevarla a un nivel "muy moderno" y de alto impacto, se recomienda refinar los colores existentes y añadir un acento secundario estratégico.
+
+**Colores Base (Neutros):**
+*   **`--background`**: `hsl(240 10% 3.9%)` (Azul/Gris muy oscuro) - Mantener. Profundo y sofisticado.
+*   **`--surface`** (para tarjetas, popovers): `hsl(240 10% 5.9%)` - Ligeramente más claro que el fondo para dar profundidad.
+*   **`--text-primary`**: `hsl(0 0% 98%)` (Blanco puro) - Para contenido principal.
+*   **`--text-secondary`**: `hsl(240 5% 75%)` (Gris claro) - Para texto secundario, más legible sobre fondos oscuros.
+*   **`--border-color`**: `hsl(240 3.7% 15.9%)` (Gris oscuro) - Para separaciones sutiles.
+
+**Colores de Acento (Innovación y Acción):**
+*   **`--primary-accent`**: `hsl(262 83% 58%)` (Púrpura vibrante) - Mantener. Fuerte y moderno.
+*   **`--primary-accent-light`**: `hsl(220 91% 65%)` (Azul brillante) - Complemento dinámico para gradientes.
+*   **`--secondary-accent`**: `hsl(180 70% 50%)` (Verde azulado vibrante) - Nuevo acento complementario que aporta un toque tecnológico y fresco.
+
+**Gradientes:**
+*   **`--gradient-primary`**: `linear-gradient(135deg, var(--primary-accent), var(--primary-accent-light))` - Mantener.
+*   **`--gradient-background`**: `linear-gradient(135deg, var(--background), hsl(240 10% 8%))` - Mantener.
+*   **`--gradient-secondary-accent`**: `linear-gradient(45deg, var(--secondary-accent), hsl(200 80% 60%))` - Nuevo gradiente para acentos sutiles.
+
+### 7.2. Tipografía para un Diseño Moderno
+
+Para lograr un diseño "muy moderno" y de alto impacto, se recomienda la siguiente combinación de fuentes (disponibles en Google Fonts para fácil integración):
+
+*   **Fuentes para Títulos (`h1`, `h2`, `h3`):**
+    *   **`Outfit`**: Una fuente sans-serif geométrica, limpia y con un toque contemporáneo. Sus formas simples y su buena legibilidad la hacen ideal para titulares impactantes. Utilizar diferentes pesos (Bold, Semi-Bold) para la jerarquía.
+
+*   **Fuentes para Cuerpo de Texto (`p`, listas, etc.):**
+    *   **`Inter`**: Una fuente sans-serif altamente versátil, diseñada para pantallas. Ofrece una excelente legibilidad en tamaños pequeños y grandes, con una amplia gama de pesos. Combina perfectamente con `Outfit` y es una opción muy popular en diseños modernos. Utilizar pesos como Regular y Medium.
+
+Esta combinación de `Outfit` para titulares y `Inter` para el cuerpo de texto proporcionará una estética moderna, limpia y tecnológica, manteniendo una legibilidad óptima en todos los dispositivos.
