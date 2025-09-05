@@ -1,10 +1,9 @@
 import { createRoot } from 'react-dom/client'
-// import App from './App.tsx' // Comment out
-// import './index.css' // Comment out
+import App from './App.tsx' // Reintroduce
+import './index.css' // Reintroduce
 
-console.log("main.tsx is executing!"); // Add this log
+// console.log("main.tsx is executing!"); // Remove this log
 
 createRoot(document.getElementById("root")!).render(
-  // <App /> // Comment out
-  <div>Hello from main.tsx!</div> // Simple div instead of App
+  <App /> // Reintroduce
 );
