@@ -36,7 +36,16 @@
   </head>
 
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+        <div id="root"></div>
+    <script>
+      console.log("index.html loaded and script executing!");
+      // alert("index.html loaded!"); // Keep this commented for now
+    </script>
+    <script type="module">
+      // Directly embed a simple log from main.tsx's context
+      console.log("main.tsx script tag is executing!");
+      // If this works, then the issue is with the content of main.tsx or its imports
+      // If this doesn't work, then the type="module" or the script tag itself is the problem.
+    </script>
   </body>
 </html>
