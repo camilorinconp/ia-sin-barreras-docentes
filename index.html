@@ -3,7 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IA Sin Barreras - El futuro de la educación está aquí</title>
+        <title>IA Sin Barreras - El futuro de la educación está aquí</title>
+    <!-- ... other meta tags and links ... -->
+    <script>
+      window.onerror = function(message, source, lineno, colno, error) {
+        console.error("Global Error Caught:", {
+          message: message,
+          source: source,
+          lineno: lineno,
+          colno: colno,
+          error: error ? error.stack : "No error object"
+        });
+        return true; // Prevent default error handling
+      };
+    </script>
     <meta name="description" content="Únete a la comunidad IA Sin Barreras y capacita a tus docentes para liderar la próxima generación de innovación educativa. Programa intensivo en Fundamentos de IA." />
     <meta name="author" content="IA Sin Barreras - Burodap" />
     <meta name="keywords" content="IA, inteligencia artificial, educación, docentes, innovación, semilleros, investigación, tecnología educativa" />
