@@ -1,3 +1,6 @@
+console.log("Attempting to import src/lib/supabase.ts"); // New log
+throw new Error("FORCED ERROR: Supabase module is being imported!"); // Force an error
+
 import { createClient } from '@supabase/supabase-js';
 
 const supabaseUrl = "https://uewblsnnrmthgzpffxsm.supabase.co"; // HARDCODED FOR DEBUGGING
