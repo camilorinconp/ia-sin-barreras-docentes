@@ -20,6 +20,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { supabase } from "../lib/supabase";
 
 const formSchema = z.object({
   fullName: z.string().min(1, "El nombre completo es obligatorio."),
@@ -41,12 +42,36 @@ const ScholarshipApplicationForm = () => {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log("Formulario enviado:", values);
-    // Aquí iría la lógica para enviar los datos a un servicio externo
-    // Por ejemplo, a una API, Google Forms, etc.
-    alert("¡Formulario enviado con éxito! Nos pondremos en contacto contigo pronto.");
-    form.reset(); // Limpiar el formulario después del envío
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    console.log("Attempting Supabase insertion..."); // New log
+    try {
+      const { data, error } = await supabase
+        .from("workshop_registrations")
+        .insert([
+          {
+            full_name: values.fullName,
+            whatsapp_number: values.whatsappNumber,
+            document_number: values.documentNumber,
+            institution_name: values.institutionName,
+            municipality: values.municipality,
+          },
+        ]);
+
+      console.log("Supabase insert result - data:", data); // New log
+      console.log("Supabase insert result - error:", error); // New log
+
+      if (error) {
+        console.error("Error al insertar en Supabase:", error);
+        alert("Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo. Detalles: " + error.message);
+      } else {
+        console.log("Datos insertados en Supabase:", data);
+        alert("¡Formulario enviado con éxito! Nos pondremos en contacto contigo pronto.");
+        form.reset();
+      }
+    } catch (error) {
+      console.error("Error inesperado al enviar el formulario:", error);
+      alert("Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo. Detalles: " + error.message);
+    }
   }
 
   return (
