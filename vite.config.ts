@@ -20,4 +20,7 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    minify: false, // Temporarily disable minification for debugging
+  },
 }));
