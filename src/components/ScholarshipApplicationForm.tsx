@@ -43,7 +43,7 @@ const ScholarshipApplicationForm = () => {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log("Attempting Supabase insertion..."); // New log
+    alert("Attempting Supabase insertion..."); // Use alert
     try {
       const { data, error } = await supabase
         .from("workshop_registrations")
@@ -57,20 +57,17 @@ const ScholarshipApplicationForm = () => {
           },
         ]);
 
-      console.log("Supabase insert result - data:", data); // New log
-      console.log("Supabase insert result - error:", error); // New log
+      alert("Supabase insert result - data: " + JSON.stringify(data)); // Use alert
+      alert("Supabase insert result - error: " + JSON.stringify(error)); // Use alert
 
       if (error) {
-        console.error("Error al insertar en Supabase:", error);
-        alert("Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo. Detalles: " + error.message);
+        alert("Error al insertar en Supabase. Detalles: " + error.message);
       } else {
-        console.log("Datos insertados en Supabase:", data);
         alert("¡Formulario enviado con éxito! Nos pondremos en contacto contigo pronto.");
         form.reset();
       }
     } catch (error) {
-      console.error("Error inesperado al enviar el formulario:", error);
-      alert("Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo. Detalles: " + error.message);
+      alert("Error inesperado al enviar el formulario. Detalles: " + error.message);
     }
   }
 
