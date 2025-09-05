@@ -13,15 +13,15 @@ import { createClient } from '@supabase/supabase-js';
 const supabaseUrl = "https://uewblsnnrmthgzpffxsm.supabase.co"; // HARDCODED FOR DEBUGGING
 const supabaseAnonKey = "sb_publishable_js7aPk9mIwEft3qH4_cc_g_LWaNKLdN"; // HARDCODED FOR DEBUGGING
 
-console.log("Supabase URL (INLINE DEBUG):", supabaseUrl);
-console.log("Supabase Anon Key (INLINE DEBUG):", supabaseAnonKey ? "Loaded" : "Not Loaded");
+alert("Supabase URL (INLINE DEBUG): " + supabaseUrl); // Use alert
+alert("Supabase Anon Key (INLINE DEBUG): " + (supabaseAnonKey ? "Loaded" : "Not Loaded")); // Use alert
 
 let supabaseInstance;
 try {
   supabaseInstance = createClient(supabaseUrl, supabaseAnonKey);
-  console.log("Supabase client created successfully (INLINE DEBUG).");
+  alert("Supabase client created successfully (INLINE DEBUG)."); // Use alert
 } catch (error) {
-  console.error("Error creating Supabase client (INLINE DEBUG):", error);
+  alert("Error creating Supabase client (INLINE DEBUG): " + error.message); // Use alert
 }
 
 const supabase = supabaseInstance; // Define supabase here for App.tsx to use
